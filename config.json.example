@@ -1,5 +1,6 @@
 {
     "Bootstrap": {
         "core_modules": ["Storage", "Posts", "Router"]
-    }
+    },
+    "Router": {}
 }
