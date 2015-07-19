@@ -1,6 +1,8 @@
 {
     "Bootstrap": {
-        "core_modules": ["Storage", "Posts", "Router"]
+        "core_modules": ["Router", "Storage", "Posts"]
     },
-    "Router": {}
+    "Router": {
+        "port": 8080
+    }
 }
