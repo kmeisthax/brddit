@@ -11,7 +11,7 @@ function run() {
 
         config = cfgObject;
 
-        for (i = 0; i < config.Bootstrap.core_modules; i += 1) {
+        for (i = 0; i < config.Bootstrap.core_modules.length; i += 1) {
             theModule = require("../" + config.Bootstrap.core_modules[i]);
             bootstrapped_modules[config.Bootstrap.core_modules[i]] = theModule.run(config, bootstrapped_modules);
         }
