@@ -2,7 +2,8 @@
 "use strict";
 
 var promised = require("../Promised"),
-    Promise = require("bluebird");
+    Promise = require("bluebird"),
+    fs = require("fs");
 
 /* Read and parse a JSON file.
  *
@@ -14,7 +15,7 @@ function parseJSON(filename) {
     var stats, fd, buffer, obj;
 
     return new Promise(function (resolve, reject) {
-        return promised.fs.statAsync(filename);
+        resolve(promised.fs.statAsync(filename));
     }).then(function (stat) {
         stats = stat;
         buffer = new Buffer(stats.size);
@@ -27,7 +28,7 @@ function parseJSON(filename) {
     }).then(function (bytesRead) {
         promised.fs.closeAsync(fd);
 
-        return JSON.parseJSON(buffer.toString("utf-8"));
+        return JSON.parse(buffer.toString("utf-8"));
     }).catch(function (err) {
         if (fd !== undefined) {
             promised.fs.closeAsync(fd);
