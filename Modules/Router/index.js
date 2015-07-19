@@ -29,7 +29,10 @@ function run(config, modules) {
         serverArgs.push(config.Router.backlog);
     }
 
-    serverArgs.push(resolve);
+    serverArgs.push(function () {
+        console.log("Listening!");
+        resolve();
+    });
 
     server = app.listen.apply(app, serverArgs);
 
