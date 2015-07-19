@@ -1,11 +1,11 @@
 /*jslint node:true, es5:true*/
 "use strict";
 
-var postgresLayer = require("./postgres");
+var postgres = require("./postgres");
 
 function run(config, modules) {
     return {};
 }
 
-module.exports.postgres = postgresLayer;
+module.exports.postgres = postgres;
 module.exports.run = run;
