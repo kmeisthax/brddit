@@ -4,5 +4,13 @@
     },
     "Router": {
         "port": 8080
+    },
+    "Storage": {
+        "layers": [
+            {
+                "__type": "postgres",
+                "connection": "postgres://auser:apass@example.com/adatabase"
+            }
+        ]
     }
 }
