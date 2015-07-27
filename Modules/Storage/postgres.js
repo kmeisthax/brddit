@@ -10,7 +10,11 @@ var squel = require("squel"),
  * Returns a PG-Promise database instance.
  */
 function setup_layer(layer_config) {
-    return pg(layer_config.connection);
+    return {
+        "type": "postgres",
+        "pg": pg(layer_config.connection),
+        "builder": postgresBuilder
+    };
 }
 
 module.exports.builder = postgresBuilder;
